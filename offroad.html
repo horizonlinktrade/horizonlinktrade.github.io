@@ -1,0 +1,1395 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Link Trade - Motorcycle Phone Holder Supplier</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230071e3'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1d1d1f;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 16px 0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        
+        /* 首屏 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 20px 80px;
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f7;
+        }
+        
+        /* 首屏背景视频轮播 */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            z-index: 0;
+        }
+        
+        .hero-video.active {
+            opacity: 1;
+        }
+        
+        /* 首屏装饰线条 */
+        .hero-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .hero-line {
+            position: absolute;
+            background: #0071e3;
+            opacity: 0.8;
+        }
+        
+        .hero-line-short {
+            height: 2px;
+            width: 15%;
+        }
+        
+        .hero-line-1 {
+            top: 15%;
+            left: 10%;
+            animation: lineMove1 8s ease-in-out infinite;
+        }
+        
+        .hero-line-2 {
+            top: 30%;
+            right: 15%;
+            animation: lineMove2 8s ease-in-out infinite;
+        }
+        
+        .hero-line-3 {
+            top: 50%;
+            left: 30%;
+            animation: lineMove3 8s ease-in-out infinite;
+        }
+        
+        .hero-line-4 {
+            top: 70%;
+            right: 25%;
+            animation: lineMove1 8s ease-in-out infinite;
+        }
+        
+        .hero-line-5 {
+            top: 85%;
+            left: 15%;
+            animation: lineMove2 8s ease-in-out infinite;
+        }
+        
+        .hero-arc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: arcRotate 20s linear infinite;
+        }
+        
+        .arc-segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+        }
+        
+        .arc-seg-1 {
+            border-top-color: #0071e3;
+            transform: rotate(30deg);
+        }
+        
+        .arc-seg-2 {
+            border-right-color: #0071e3;
+            transform: rotate(120deg);
+        }
+        
+        .arc-seg-3 {
+            border-bottom-color: #0071e3;
+            transform: rotate(210deg);
+        }
+        
+        .arc-seg-4 {
+            border-left-color: #0071e3;
+            transform: rotate(300deg);
+        }
+        
+        @keyframes lineMove1 {
+            0%, 100% { transform: translateX(-10%); }
+            50% { transform: translateX(10%); }
+        }
+        
+        @keyframes lineMove2 {
+            0%, 100% { transform: translateX(10%); }
+            50% { transform: translateX(-10%); }
+        }
+        
+        @keyframes lineMove3 {
+            0%, 100% { transform: translateX(-5%); }
+            50% { transform: translateX(5%); }
+        }
+        
+        @keyframes arcRotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* 半透明白色蒙版 */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+        
+        .hero h1, .hero .subtitle, .hero .hero-buttons {
+            position: relative;
+            z-index: 2;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .hero.fade-out-text h1,
+        .hero.fade-out-text .subtitle,
+        .hero.fade-out-text .hero-buttons {
+            opacity: 0;
+        }
+        
+        /* 蓝色线条划过效果 */
+        .nav-line {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: #0071e3;
+            z-index: 1001;
+            transition: width 0.8s ease-out;
+        }
+        
+        .nav-line.animate {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #515154;
+            margin-bottom: 48px;
+            max-width: 650px;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 980px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #0071e3;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #0071e3;
+            border: 1px solid #0071e3;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 113, 227, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        /* 通用版块 */
+        .section {
+            padding: 140px 0;
+            position: relative;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: #0071e3;
+            opacity: 0.6;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #515154;
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        /* 公司故事 - 左右两栏布局 */
+        .story {
+            background: linear-gradient(180deg, #ffffff 0%, #ececef 100%);
+            min-height: 75vh;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* 动态装饰线条 */
+        .story-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .story-line {
+            position: absolute;
+            height: 3px;
+            background: #0071e3;
+            opacity: 0.4;
+            border-radius: 2px;
+        }
+        
+        .line-h1 {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            animation: lineMove1 2s linear infinite alternate;
+        }
+        
+        .line-h2 {
+            top: 40%;
+            right: 15%;
+            width: 120px;
+            animation: lineMove2 1.5s linear infinite alternate;
+        }
+        
+        .line-h3 {
+            top: 60%;
+            left: 20%;
+            width: 60px;
+            animation: lineMove3 1.8s linear infinite alternate;
+        }
+        
+        .line-h4 {
+            top: 75%;
+            right: 25%;
+            width: 100px;
+            animation: lineMove1 1.2s linear infinite alternate;
+        }
+        
+        .line-h5 {
+            top: 30%;
+            left: 70%;
+            width: 40px;
+            animation: lineMove2 2.2s linear infinite alternate;
+        }
+        
+        .line-h6 {
+            top: 55%;
+            left: 5%;
+            width: 150px;
+            animation: lineMove3 1.6s linear infinite alternate;
+        }
+        
+        @keyframes lineMove1 {
+            from { transform: translateX(0); }
+            to { transform: translateX(80px); }
+        }
+        
+        @keyframes lineMove2 {
+            from { transform: translateX(0); }
+            to { transform: translateX(-60px); }
+        }
+        
+        @keyframes lineMove3 {
+            from { transform: translateX(0); }
+            to { transform: translateX(100px); }
+        }
+        
+        /* 动态装饰线条 */
+        .story-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .story-line {
+            position: absolute;
+            height: 2px;
+            background: rgba(0, 113, 227, 0.2);
+            border-radius: 2px;
+            animation: lineMove 3s linear infinite;
+        }
+        
+        @keyframes lineMove {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px));
+                opacity: 0;
+            }
+        }
+        
+        /* 不同方向的线条 */
+        .story-line-vertical {
+            width: 2px;
+            height: auto;
+            animation: lineMoveVertical 4s linear infinite;
+        }
+        
+        @keyframes lineMoveVertical {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100% + 100px));
+                opacity: 0;
+            }
+        }
+        
+        .story-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .story-bg-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: url('company.jpg') center/cover no-repeat;
+            filter: blur(8px);
+            opacity: 0.6;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .story-container {
+                grid-template-columns: 1fr;
+            }
+            .story-bg-image {
+                width: 100%;
+                opacity: 0.15;
+            }
+        }
+        
+        /* 淡入动画 */
+        .fade-in-step {
+            opacity: 0;
+            animation: fadeInStep 1s ease forwards;
+        }
+        
+        @keyframes fadeInStep {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .story-content {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #515154;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .story-content .question {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #1d1d1f;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+        
+        .story-content ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .story-content ul li {
+            margin: 24px 0;
+            color: #515154;
+            line-height: 1.6;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .story-content .ending {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #1d1d1f;
+        }
+        
+        /* 我们的优势 */
+        .advantages {
+            background: #f5f5f7;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .advantage-card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .advantage-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .advantage-card p {
+            color: #515154;
+            line-height: 1.8;
+        }
+        
+        /* 服务流程 - 环形流程图 */
+        .process {
+            background: #ffffff;
+        }
+        
+        .process-container {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 100px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-divider {
+            width: 1px;
+            height: 400px;
+            background: #e0e0e0;
+        }
+        
+        .process-circle {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .process-circle {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .process-ring-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .process-node {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+        
+        .process-node:hover {
+            transform: scale(1.2);
+        }
+        
+        .process-node.active {
+            background: #0071e3;
+            box-shadow: 0 0 0 6px rgba(0, 113, 227, 0.2);
+        }
+        
+        .process-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-left-color: #0071e3;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .process-arrow.active {
+            opacity: 1;
+        }
+        
+        .process-node-label {
+            position: absolute;
+            font-size: 0.95rem;
+            color: #515154;
+        }
+        
+        .process-node.active .process-node-label {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        .node-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .node-2 { top: 50%; right: 0; transform: translateY(-50%); }
+        .node-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .node-4 { top: 50%; left: 0; transform: translateY(-50%); }
+        
+        .node-1 .process-node-label { 
+            position: absolute;
+            top: 25px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .node-2 .process-node-label { 
+            position: absolute;
+            right: 25px; 
+            top: 50%; 
+            transform: translateY(-50%);
+            white-space: nowrap;
+        }
+        .node-3 .process-node-label { 
+            position: absolute;
+            bottom: 25px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .node-4 .process-node-label { 
+            position: absolute;
+            left: 25px; 
+            top: 50%; 
+            transform: translateY(-50%);
+            white-space: nowrap;
+        }
+        
+        .process-details {
+            padding: 40px;
+            background: #f5f5f7;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .process-detail {
+            display: none;
+        }
+        
+        .process-detail.active {
+            display: block;
+        }
+        
+        .process-detail h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .process-detail p {
+            color: #515154;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        @media (max-width: 968px) {
+            .process-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-divider {
+                width: 400px;
+                height: 1px;
+            }
+            
+            .process-circle {
+                width: 350px;
+                height: 350px;
+            }
+        }
+        
+        /* 主打产品 */
+        .products {
+            background: #f5f5f7;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #ffffff;
+        }
+        
+        .product-info {
+            padding: 36px;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+        
+        .product-info .feature {
+            color: #515154;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-info .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0071e3;
+            margin-bottom: 24px;
+        }
+        
+        .product-info .btn {
+            width: auto;
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 0 auto;
+        }
+        
+        /* 客户案例 */
+        .clients {
+            background: #ffffff;
+        }
+        
+        .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .client-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #86868b;
+            padding: 24px 40px;
+            background: #f5f5f7;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .client-logo:hover {
+            color: #1d1d1f;
+            background: #e8e8ed;
+        }
+        
+        /* 联系我们 */
+        .contact {
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .contact-item {
+            padding: 30px;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 16px;
+            color: #515154;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .contact-item p {
+            font-size: 1.2rem;
+            color: #1d1d1f;
+        }
+        
+        .contact-item a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 互动弹窗 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 48px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            color: #1d1d1f;
+        }
+        
+        .modal-content ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .modal-content ul li {
+            margin: 16px 0;
+            font-size: 1.1rem;
+            color: #515154;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #86868b;
+        }
+        
+        .modal-content {
+            position: relative;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">Horizon Link Trade</div>
+                <div class="nav-links">
+                    <a href="#story">About</a>
+                    <a href="#advantages">Why Us</a>
+                    <a href="#process">How It Works</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-line"></div>
+    </nav>
+    
+    <!-- 版块1：首屏 -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video active" src="bg-video-1.mp4"></video>
+        <video autoplay muted loop playsinline class="hero-video" src="bg-video-2.mp4"></video>
+        <video autoplay muted loop playsinline class="hero-video" src="bg-video-3.mp4"></video>
+        
+        <!-- 首屏装饰线条 -->
+        <div class="hero-lines">
+            <div class="hero-line hero-line-short hero-line-1"></div>
+            <div class="hero-line hero-line-short hero-line-2"></div>
+            <div class="hero-line hero-line-short hero-line-3"></div>
+            <div class="hero-line hero-line-short hero-line-4"></div>
+            <div class="hero-line hero-line-short hero-line-5"></div>
+            <div class="hero-arc">
+                <div class="arc-segment arc-seg-1"></div>
+                <div class="arc-segment arc-seg-2"></div>
+                <div class="arc-segment arc-seg-3"></div>
+                <div class="arc-segment arc-seg-4"></div>
+            </div>
+        </div>
+        
+        <h1>Horizon Link Trade</h1>
+        <p class="subtitle">Shock-proof motorcycle phone holders<br>built for rough off-road trails</p>
+        <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">View Products</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </section>
+    
+
+
+    <!-- 版块2：公司故事（互动版，左右布局） -->
+    <section class="section story" id="story">
+
+        <div class="container">
+            <div class="story-container">
+                <div class="story-content">
+                    <!-- 第一步：初始按钮 -->
+                    <div id="step1" style="text-align: left;">
+                        <button class="btn btn-primary" onclick="showPainPoints()" style="padding: 24px 48px; font-size: 1.3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 113, 227, 0.3); transition: all 0.3s;">
+                            Tired of sourcing from multiple factories?
+                        </button>
+                    </div>
+                    
+                    <!-- 第二步：痛点问题 -->
+                    <div id="step2" class="fade-in-step" style="display: none; text-align: left;">
+                        <p class="question">Have you ever experienced these problems?</p>
+                        <ul style="list-style: none; margin: 48px 0;">
+                            <li>Found several factories, but quality is inconsistent</li>
+                            <li>Spent too much time negotiating with each factory</li>
+                            <li>Worried about quality issues after delivery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="showEmpathy()" style="padding: 16px 36px; font-size: 1rem; border-radius: 12px; margin-top: 32px; box-shadow: 0 10px 30px rgba(0, 113, 227, 0.3); transition: all 0.3s;">About Us</button>
+                    </div>
+                    
+                    <!-- 第三步：共情内容 -->
+                    <div id="step3" class="fade-in-step" style="display: none; text-align: left;">
+                        <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; color: #1d1d1f;">We know how frustrating that is.</p>
+                        <p class="ending">
+                            We were buyers too. We know how frustrating it is to "find the right product and worry about getting scammed."<br><br>
+                            That's why we built Horizon Link Trade — we screen the best motorcycle accessory factories in China and connect them directly to you. You don't need to find factories one by one, and you don't need to worry about getting scammed. We control quality and prices for you.
+                        </p>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 版块3：我们的优势 -->
+    <section class="section advantages" id="advantages">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Us?</h2>
+            <p class="section-subtitle fade-in">We make sourcing easy for you</p>
+            <div class="advantages-grid">
+                <div class="advantage-card fade-in">
+                    <div class="icon">📦</div>
+                    <h3>Wide Product Range</h3>
+                    <p>We work with multiple motorcycle accessory factories long-term. One factory can only make a limited range of products, but we can provide everything you need — no need to source from multiple suppliers.</p>
+                </div>
+                <div class="advantage-card fade-in">
+                    <div class="icon">✅</div>
+                    <h3>Quality Control</h3>
+                    <p>We have long-term partnerships with our factories, not random one-time deals. We check quality on every shipment. If there's a problem, we take responsibility.</p>
+                </div>
+                <div class="advantage-card fade-in">
+                    <div class="icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Because of our long-term partnerships with factories, we can offer better prices than you would get sourcing directly on your own.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 版块4：服务流程 -->
+    <section class="section process" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">How It Works</h2>
+            <p class="section-subtitle fade-in">Simple 4-step process to get your products</p>
+            <div class="process-container fade-in">
+                <div class="process-circle">
+                    <svg class="process-ring-svg" width="400" height="400">
+                        <circle cx="200" cy="200" r="198" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+                        <circle id="processRingCircle" cx="200" cy="200" r="198" fill="none" stroke="#0071e3" stroke-width="2" 
+                                stroke-dasharray="1243" stroke-dashoffset="932" 
+                                transform="rotate(-90 200 200)"/>
+                    </svg>
+                    <div class="process-node node-1 active" data-step="1">
+                        <div class="process-node-label">Tell Us Your Needs</div>
+                    </div>
+                    <div class="process-node node-2" data-step="2">
+                        <div class="process-node-label">We Send Quotes</div>
+                    </div>
+                    <div class="process-node node-3" data-step="3">
+                        <div class="process-node-label">Confirm Samples</div>
+                    </div>
+                    <div class="process-node node-4" data-step="4">
+                        <div class="process-node-label">We Arrange Shipping</div>
+                    </div>
+                </div>
+                <div class="process-divider"></div>
+                <div class="process-details">
+                    <div class="process-detail active" id="detail-1">
+                        <h3>Tell Us What You Need</h3>
+                        <p>Let us know the product models and quantities you're looking for. The more details you provide, the better we can match you with the right products.</p>
+                    </div>
+                    <div class="process-detail" id="detail-2">
+                        <h3>We Send Quotes & Product Photos</h3>
+                        <p>We recommend the right products and prices based on your requirements. You'll get clear product photos and competitive quotes within 24 hours.</p>
+                    </div>
+                    <div class="process-detail" id="detail-3">
+                        <h3>Confirm Samples & Prices</h3>
+                        <p>If you're interested, we can arrange sample confirmation. You can check quality before placing a bulk order, no risk.</p>
+                    </div>
+                    <div class="process-detail" id="detail-4">
+                        <h3>We Arrange Shipping</h3>
+                        <p>Once confirmed, we arrange shipping to your designated location. We handle all logistics details so you don't have to worry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 版块5：主打产品 -->
+    <section class="section products" id="products">
+        <div class="container">
+            <h2 class="section-title fade-in">Off-Road Rated Shock-Proof Mounts</h2>
+            <p class="section-subtitle fade-in">Built to survive rough trails, no more broken phones</p>
+            <div class="products-grid">
+                <div class="product-card fade-in" style="position: relative; border: 2px solid #0071e3;">
+                    <span style="position: absolute; top: 12px; right: 12px; background: #0071e3; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; z-index: 10;">Best for Off-Road</span>
+                    <img src="03-高端款防震-盛世优品HW182气囊减震.jpeg" alt="Airbag shock-absorbing handlebar mount">
+                    <div class="product-info">
+                        <h3>Airbag Shock-Absorbing Mount</h3>
+                        <p class="feature">Airbag shock absorption system built for rough off-road trails, keeps your phone secure on bumpy rides</p>
+                        <p class="price">$2.90 - $3.20 USD</p>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="01-主流款车把-飞诚达Z5四角锁紧.png" alt="Four-corner lock handlebar mount">
+                    <div class="product-info">
+                        <h3>Four-Corner Lock Handlebar Mount</h3>
+                        <p class="feature">Secure four-corner locking, durable alloy construction, fits all off-road handlebars</p>
+                        <p class="price">$0.90 - $1.00 USD</p>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="02-主流款后视镜-飞诚达Z2.png" alt="Rearview mirror mount">
+                    <div class="product-info">
+                        <h3>Rearview Mirror Mount</h3>
+                        <p class="feature">No-drill mirror installation, stable on bumpy trails</p>
+                        <p class="price">$0.85 - $0.95 USD</p>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="04-防晒款-仕佰成YCD6S遮阳伞.png" alt="Sunshade mount with umbrella">
+                    <div class="product-info">
+                        <h3>Sunshade Mount with Umbrella</h3>
+                        <p class="feature">Built-in sun umbrella, keeps your phone cool on long outdoor rides</p>
+                        <p class="price">$2.50 - $2.70 USD</p>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 48px; color: #86868b; font-size: 0.9rem;">
+                * Prices are reference only, actual prices depend on order quantity
+            </p>
+        </div>
+    </section>
+    
+    <!-- 版块6：客户案例 -->
+    <section class="section clients">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Clients</h2>
+            <p class="section-subtitle fade-in">Trusted by motorcycle accessory dealers across Vietnam</p>
+            <div class="client-logos fade-in">
+                <div class="client-logo">Motowolf</div>
+                <div class="client-logo">Bikers Saigon</div>
+                <div class="client-logo">Phụ Kiện 95 Shop</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 版块7：联系我们 -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <p class="section-subtitle fade-in">Ready to start sourcing? Contact us today.</p>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <h3>Email</h3>
+                    <p><a href="mailto:evan.huang.trade@gmail.com">evan.huang.trade@gmail.com</a></p>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/8613306093921">+86 133 0609 3921</a></p>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>Contact Person</h3>
+                    <p>Evan Huang</p>
+                </div>
+            </div>
+            <div style="margin-top: 60px;">
+                <a href="https://wa.me/8613306093921" class="btn btn-primary">Chat on WhatsApp Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // 互动步骤切换
+        function showPainPoints() {
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        }
+        
+        function showEmpathy() {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step3').style.display = 'block';
+        }
+
+        // 滚动动画 - 每次都能触发
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    // 离开视口时移除visible，这样再滚回来还能再触发
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // 页面加载完成后，蓝色线条划过
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.nav-line').classList.add('animate');
+            }, 500);
+        });
+        
+        // 首屏背景视频轮播 + 文字动画
+        const videos = document.querySelectorAll('.hero-video');
+        const heroSection = document.querySelector('.hero');
+        let currentVideo = 0;
+        
+        setInterval(() => {
+            // 文字先淡出
+            heroSection.classList.add('fade-out-text');
+            
+            // 等0.5秒后切换视频
+            setTimeout(() => {
+                videos[currentVideo].classList.remove('active');
+                currentVideo = (currentVideo + 1) % videos.length;
+                videos[currentVideo].classList.add('active');
+                
+                // 再等1秒，文字淡入
+                setTimeout(() => {
+                    heroSection.classList.remove('fade-out-text');
+                }, 1000);
+            }, 500);
+        }, 5000); // 每5秒切换一个视频
+        
+        // 导航栏滚动高亮
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // How it works - 点击节点切换详情
+        const processNodes = document.querySelectorAll('.process-node');
+        const processDetails = document.querySelectorAll('.process-detail');
+        const processRingCircle = document.getElementById('processRingCircle');
+        
+        // 圆的周长 = 2 * π * r = 2 * 3.14159 * 198 ≈ 1243
+        const circumference = 1243;
+        
+        // 根据步骤设置进度环的角度
+        function setProgress(step) {
+            // 第1步显示1/4，第2步显示一半，第3步显示3/4，第4步显示全部
+            const offset = circumference * (1 - step / 4);
+            processRingCircle.style.strokeDashoffset = offset;
+        }
+        
+        // 默认设置第一步的进度
+        setProgress(1);
+        
+        processNodes.forEach(node => {
+            node.addEventListener('click', () => {
+                // 移除所有active
+                processNodes.forEach(n => n.classList.remove('active'));
+                processDetails.forEach(d => d.classList.remove('active'));
+                
+                // 添加当前active
+                node.classList.add('active');
+                const step = parseInt(node.dataset.step);
+                document.getElementById(`detail-${step}`).classList.add('active');
+                
+                // 设置进度环
+                setProgress(step);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
