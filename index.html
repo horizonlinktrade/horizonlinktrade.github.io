@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horizon Link Trade - Motorcycle Phone Holder Supplier</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230071e3'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <style>
         * {
             margin: 0;
@@ -783,91 +786,418 @@
             background: #f5f5f7;
         }
         
-        .products-grid {
+        .prod-stage {
+            position: relative;
+            margin-top: 56px;
+        }
+        
+        .prod-slide {
+            display: none;
+        }
+        
+        .prod-slide.on {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .product-card {
+            grid-template-columns: 420px 1fr;
+            min-height: 472px;
             background: #ffffff;
-            border-radius: 20px;
+            border-radius: 26px;
             overflow: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03);
         }
         
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        .prod-visual {
+            position: relative;
+            background: #f2f2f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
         }
         
-        .product-card img {
-            width: 100%;
-            height: 300px;
+        .prod-visual img {
+            max-width: 100%;
+            max-height: 318px;
             object-fit: contain;
-            background: #ffffff;
+            mix-blend-mode: multiply;
         }
         
-        .product-info {
-            padding: 36px;
-            text-align: center;
+        .prod-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #0071e3;
+            color: #ffffff;
+            font-size: 0.66rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 3px;
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.28);
         }
         
-        .product-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 700;
+        .prod-tag {
+            position: absolute;
+            left: 24px;
+            bottom: 24px;
+            background: #1d2939;
+            color: #ffffff;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 9px 14px;
+        }
+        
+        .prod-detail {
+            display: flex;
+            flex-direction: column;
+            padding: 46px 52px 40px;
+        }
+        
+        .prod-sku {
+            font-size: 0.76rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            color: #0071e3;
+            text-transform: uppercase;
+        }
+        
+        .prod-name {
+            font-size: 1.9rem;
+            line-height: 1.25;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+            margin-top: 12px;
+        }
+        
+        .prod-sub {
+            font-size: 0.94rem;
+            color: #86868b;
+            margin-top: 10px;
+        }
+        
+        .prod-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px 28px;
+            margin-top: 24px;
+        }
+        
+        .prod-point {
+            display: flex;
+            gap: 10px;
+            font-size: 0.84rem;
+            line-height: 1.55;
+            color: #515154;
+        }
+        
+        .prod-point i {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #0071e3;
+            margin-top: 9px;
+            flex: none;
+        }
+        
+        .prod-specs {
+            margin-top: auto;
+            padding-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 44px;
+        }
+        
+        .prod-spec {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-top: 1px solid #e8e8ed;
+            padding: 13px 0;
+        }
+        
+        .prod-spec .k {
+            font-size: 0.78rem;
+            color: #86868b;
+        }
+        
+        .prod-spec .v {
+            font-size: 0.82rem;
+            font-weight: 600;
             color: #1d1d1f;
         }
         
-        .product-info .feature {
-            color: #515154;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .prod-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #d2d2d7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            z-index: 3;
         }
         
-        .product-info .price {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .prod-arrow svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: #1d1d1f;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+        
+        .prod-prev {
+            left: -62px;
+        }
+        
+        .prod-next {
+            right: -62px;
+        }
+        
+        .prod-models {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 36px;
+        }
+        
+        .prod-model {
+            font-family: inherit;
+            padding: 10px 18px;
+            border-radius: 980px;
+            border: 1px solid transparent;
+            background: none;
+            font-size: 0.84rem;
+            color: #86868b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .prod-model .num {
             color: #0071e3;
-            margin-bottom: 24px;
+            font-weight: 600;
+            margin-right: 7px;
+            font-size: 0.78rem;
         }
         
-        .product-info .btn {
-            width: auto;
-            display: inline-block;
-            padding: 12px 28px;
-            margin: 0 auto;
+        .prod-model.on {
+            background: #ffffff;
+            color: #1d1d1f;
+            border-color: #e2e2e7;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
         
-        /* 客户案例 */
-        .clients {
+        @media (max-width: 1300px) {
+            .prod-prev {
+                left: 8px;
+            }
+            
+            .prod-next {
+                right: 8px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .prod-detail {
+                padding: 28px 24px 30px;
+            }
+            
+            .prod-name {
+                font-size: 1.46rem;
+            }
+            
+            .prod-points {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .prod-specs {
+                grid-template-columns: 1fr;
+                column-gap: 0;
+            }
+            
+            .prod-badge {
+                font-size: 0.62rem;
+                padding: 7px 10px;
+            }
+            
+            .prod-tag {
+                left: 18px;
+                bottom: 18px;
+                font-size: 0.66rem;
+                padding: 8px 12px;
+            }
+        }
+        
+        /* 市场版块 */
+        .markets {
             background: #ffffff;
         }
         
-        .client-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
+        .mk-grid {
+            display: grid;
+            grid-template-columns: 470px 1fr;
+            gap: 64px;
             align-items: center;
         }
         
-        .client-logo {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #86868b;
-            padding: 24px 40px;
-            background: #f5f5f7;
-            border-radius: 12px;
-            transition: all 0.3s;
+        .mk-label {
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e8e8ed;
         }
         
-        .client-logo:hover {
+        .mk-label span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #0071e3;
+            font-weight: 600;
+        }
+        
+        .region {
+            padding: 15px 0 14px;
+            border-bottom: 1px solid #f0f0f3;
+        }
+        
+        .region-top {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .region-top h3 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
             color: #1d1d1f;
-            background: #e8e8ed;
+        }
+        
+        .region-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #86868b;
+            white-space: nowrap;
+        }
+        
+        .region-tag i {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #0071e3;
+        }
+        
+        .region-countries {
+            margin-top: 7px;
+            font-size: 0.84rem;
+            color: #86868b;
+        }
+        
+        .mk-buyers {
+            margin-top: 46px;
+        }
+        
+        .buyers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 26px;
+            row-gap: 20px;
+        }
+        
+        .buyer {
+            display: grid;
+            grid-template-columns: 22px 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+        
+        .buyer .num {
+            font-size: 0.68rem;
+            color: #0071e3;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding-top: 3px;
+        }
+        
+        .buyer h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.35;
+            color: #1d1d1f;
+        }
+        
+        .buyer p {
+            margin-top: 4px;
+            font-size: 0.76rem;
+            color: #86868b;
+            line-height: 1.45;
+        }
+        
+        .mk-map img {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .mk-note {
+            max-width: 640px;
+            margin: 26px auto 0;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #f0f0f3;
+            padding-top: 16px;
+        }
+        
+        .mk-note span {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #86868b;
+        }
+        
+        .mk-note b {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 968px) {
+            .mk-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            
+            .mk-map {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .buyers-grid {
+                grid-template-columns: 1fr;
+                row-gap: 18px;
+            }
+            
+            .region-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
         }
         
         /* 联系我们 */
@@ -1006,8 +1336,37 @@
                 display: none;
             }
             
-            .products-grid {
+            .prod-slide.on {
                 grid-template-columns: 1fr;
+                min-height: 0;
+            }
+            
+            .prod-visual {
+                min-height: 320px;
+                padding: 28px;
+            }
+            
+            .prod-detail {
+                padding: 32px 30px 34px;
+            }
+            
+            .prod-name {
+                font-size: 1.62rem;
+            }
+            
+            .prod-arrow {
+                display: none;
+            }
+            
+            .prod-models {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
+            
+            .prod-model {
+                flex: none;
+                white-space: nowrap;
             }
         }
         
@@ -1022,6 +1381,252 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* 工厂实景 */
+        .factory {
+            background: #ffffff;
+        }
+
+        .factory-row {
+            display: flex;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .factory-text {
+            flex: 0 0 300px;
+            width: 300px;
+        }
+
+        .factory-text p {
+            font-size: 15px;
+            line-height: 1.85;
+            color: #515154;
+            letter-spacing: 0.002em;
+            text-wrap: balance;
+        }
+
+        .factory-points {
+            list-style: none;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .factory-points li {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .factory-points .num {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: #0071e3;
+            flex: 0 0 18px;
+        }
+
+        .factory-points .txt {
+            font-size: 13px;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
+        }
+
+        .factory-slider {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .factory-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #f2f2f4;
+        }
+
+        .factory-frame img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .factory-frame img.on {
+            opacity: 1;
+        }
+
+        .factory-frame::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 90px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0));
+            pointer-events: none;
+        }
+
+        .factory-cap {
+            position: absolute;
+            left: 16px;
+            bottom: 14px;
+            z-index: 2;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .factory-dots {
+            position: absolute;
+            right: 16px;
+            bottom: 15px;
+            z-index: 2;
+            display: flex;
+            gap: 6px;
+        }
+
+        .factory-dots button {
+            width: 7px;
+            height: 7px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.62);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .factory-dots button.on {
+            background: #ffffff;
+        }
+
+        .factory-video {
+            flex: 0 0 195px;
+            width: 195px;
+            aspect-ratio: 9 / 16;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000000;
+            cursor: pointer;
+        }
+
+        .factory-video img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .factory-video .fplay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .factory-video .fplay span {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #0071e3;
+            color: #ffffff;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0, 113, 227, 0.35);
+        }
+
+        .factory-video .fcap {
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 10px;
+            letter-spacing: 0.05em;
+            color: #6e6e73;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 9px;
+            border-radius: 5px;
+        }
+
+        .video-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.82);
+        }
+
+        .video-lightbox.open {
+            display: flex;
+        }
+
+        .video-lightbox video {
+            width: auto;
+            height: 80vh;
+            max-height: 80vh;
+            border-radius: 16px;
+            background: #000000;
+        }
+
+        .video-lightbox .lb-close {
+            position: absolute;
+            top: 28px;
+            right: 36px;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .video-lightbox .lb-close:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        @media (max-width: 968px) {
+            .factory-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 32px;
+            }
+
+            .factory-text {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+
+            .factory-video {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 195px;
+                margin: 0 auto;
+            }
+
+            .video-lightbox video {
+                width: 90vw;
+                height: auto;
+                max-height: 80vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1033,6 +1638,7 @@
                 <div class="nav-links">
                     <a href="#story">About</a>
                     <a href="#advantages">Why Us</a>
+                    <a href="#factory">Factory</a>
                     <a href="#process">How It Works</a>
                     <a href="#products">Products</a>
                     <a href="#contact">Contact</a>
@@ -1136,6 +1742,45 @@
         </div>
     </section>
     
+    <!-- 工厂实景 -->
+    <section class="section factory" id="factory">
+        <div class="container">
+            <h2 class="section-title">On the Factory Floor</h2>
+            <p class="section-subtitle">A look inside a factory we work with.</p>
+
+            <div class="factory-row">
+                <div class="factory-text">
+                    <p>This is one of the factories we work with. We know the line, we hold the spec, and we check the goods before they ship. If an order runs across several plants in China, you still deal with us from start to finish.</p>
+                    <ul class="factory-points">
+                        <li><span class="num">01</span><span class="txt">Injection moulding on site</span></li>
+                        <li><span class="num">02</span><span class="txt">Assembly on site</span></li>
+                        <li><span class="num">03</span><span class="txt">Stock ready to ship</span></li>
+                    </ul>
+                </div>
+
+                <div class="factory-slider">
+                    <div class="factory-frame" id="factoryFrame">
+                        <img class="on" src="工厂/web/factory-01-moulding.jpg" alt="Injection moulding workshop">
+                        <img src="工厂/web/factory-02-assembly.jpg" alt="Assembly line">
+                        <img src="工厂/web/factory-03-stock.jpg" alt="Finished goods warehouse">
+                        <div class="factory-cap" id="factoryCap">01 / INJECTION MOULDING</div>
+                        <div class="factory-dots" id="factoryDots">
+                            <button class="on" type="button" aria-label="Photo 1"></button>
+                            <button type="button" aria-label="Photo 2"></button>
+                            <button type="button" aria-label="Photo 3"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="factory-video" id="factoryVideoCard">
+                    <img src="工厂/web/factory-tour-poster.jpg" alt="Factory walk-through video">
+                    <div class="fplay"><span>▶</span></div>
+                    <div class="fcap">Factory walk-through · 9s</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 版块4：服务流程 -->
     <section class="section process" id="process">
         <div class="container">
@@ -1190,59 +1835,267 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Featured Products</h2>
             <p class="section-subtitle fade-in">Top-selling motorcycle phone holders</p>
-            <div class="products-grid">
-                <div class="product-card fade-in">
-                    <img src="01-主流款车把-飞诚达Z5四角锁紧.png" alt="Four-corner lock handlebar mount">
-                    <div class="product-info">
-                        <h3>Four-Corner Lock Handlebar Mount</h3>
-                        <p class="feature">Secure four-corner locking, durable alloy construction, one-handed operation</p>
-                        <p class="price">$0.90 - $1.00 USD</p>
-                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+            <div class="prod-stage fade-in">
+                <button class="prod-arrow prod-prev" type="button" aria-label="Previous product">
+                    <svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg>
+                </button>
+                <button class="prod-arrow prod-next" type="button" aria-label="Next product">
+                    <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                </button>
+
+                <div class="prod-slide on">
+                    <div class="prod-visual">
+                        <img src="产品图/pm06.png" alt="Low-profile quick-release mount">
+                        <span class="prod-badge">Volume entry</span>
+                        <span class="prod-tag">Low-profile</span>
+                    </div>
+                    <div class="prod-detail">
+                        <span class="prod-sku">HL-PM 06</span>
+                        <h3 class="prod-name">Low-profile quick-release mount</h3>
+                        <p class="prod-sub">A clean, practical shape for crowded cockpits.</p>
+                        <ul class="prod-points">
+                            <li class="prod-point"><i></i><span>One-key side clamp</span></li>
+                            <li class="prod-point"><i></i><span>360° rotation for landscape or portrait use</span></li>
+                            <li class="prod-point"><i></i><span>Compact body with soft contact pads</span></li>
+                            <li class="prod-point"><i></i><span>Discreet black finish for broad bike fitment</span></li>
+                        </ul>
+                        <div class="prod-specs">
+                            <div class="prod-spec"><span class="k">Phone fit</span><span class="v">4.7–7.2 in</span></div>
+                            <div class="prod-spec"><span class="k">Pack</span><span class="v">100 pcs/carton</span></div>
+                            <div class="prod-spec"><span class="k">Bar fit</span><span class="v">25–35 mm + shims</span></div>
+                            <div class="prod-spec"><span class="k">Material</span><span class="v">PC</span></div>
+                            <div class="prod-spec"><span class="k">Net weight</span><span class="v">200 g</span></div>
+                            <div class="prod-spec"><span class="k">Rotation</span><span class="v">360°</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
-                    <img src="02-主流款后视镜-飞诚达Z2.png" alt="Rearview mirror mount">
-                    <div class="product-info">
-                        <h3>Rearview Mirror Mount</h3>
-                        <p class="feature">Easy mirror installation, stable and affordable</p>
-                        <p class="price">$0.85 - $0.95 USD</p>
-                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+
+                <div class="prod-slide">
+                    <div class="prod-visual">
+                        <img src="产品图/pm03.png" alt="Shock-absorbing mount">
+                        <span class="prod-badge">Vibration control</span>
+                        <span class="prod-tag">Rough-road comfort</span>
+                    </div>
+                    <div class="prod-detail">
+                        <span class="prod-sku">HL-PM 03</span>
+                        <h3 class="prod-name">Shock-absorbing mount</h3>
+                        <p class="prod-sub">Vibration control for longer commutes and mixed road surfaces.</p>
+                        <ul class="prod-points">
+                            <li class="prod-point"><i></i><span>Elastic shock-absorbing ring isolates vibration</span></li>
+                            <li class="prod-point"><i></i><span>Large back pad supports the phone body</span></li>
+                            <li class="prod-point"><i></i><span>One-hand loading and quick release</span></li>
+                            <li class="prod-point"><i></i><span>Clear visual demonstration at point of sale</span></li>
+                        </ul>
+                        <div class="prod-specs">
+                            <div class="prod-spec"><span class="k">Phone fit</span><span class="v">4.7–7.0 in</span></div>
+                            <div class="prod-spec"><span class="k">Pack</span><span class="v">100 pcs/carton</span></div>
+                            <div class="prod-spec"><span class="k">Bar fit</span><span class="v">20–30 mm</span></div>
+                            <div class="prod-spec"><span class="k">Material</span><span class="v">PC</span></div>
+                            <div class="prod-spec"><span class="k">Net weight</span><span class="v">300 g</span></div>
+                            <div class="prod-spec"><span class="k">Mount</span><span class="v">Handlebar</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
-                    <img src="03-高端款防震-盛世优品HW182气囊减震.jpeg" alt="Airbag shock-absorbing handlebar mount">
-                    <div class="product-info">
-                        <h3>Airbag Shock-Absorbing Mount</h3>
-                        <p class="feature">Premium airbag shock absorption, excellent vibration damping</p>
-                        <p class="price">$2.90 - $3.20 USD</p>
-                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+
+                <div class="prod-slide">
+                    <div class="prod-visual">
+                        <img src="产品图/pm08.jpg" alt="Helmet-visor weather mount">
+                        <span class="prod-badge">Weather option</span>
+                        <span class="prod-tag">Sun &amp; rain cover</span>
+                    </div>
+                    <div class="prod-detail">
+                        <span class="prod-sku">HL-PM 08</span>
+                        <h3 class="prod-name">Helmet-visor weather mount</h3>
+                        <p class="prod-sub">A distinctive add-on for riders who use navigation in all weather.</p>
+                        <ul class="prod-points">
+                            <li class="prod-point"><i></i><span>Helmet-style visor shields sun and rain</span></li>
+                            <li class="prod-point"><i></i><span>Open sides keep screen edges accessible</span></li>
+                            <li class="prod-point"><i></i><span>Handlebar clamp with secure cradle</span></li>
+                            <li class="prod-point"><i></i><span>Strong add-on and upsell presentation</span></li>
+                        </ul>
+                        <div class="prod-specs">
+                            <div class="prod-spec"><span class="k">Phone fit</span><span class="v">4.7–7.0 in</span></div>
+                            <div class="prod-spec"><span class="k">Pack</span><span class="v">50 pcs/carton</span></div>
+                            <div class="prod-spec"><span class="k">Bar fit</span><span class="v">22–32 mm</span></div>
+                            <div class="prod-spec"><span class="k">Material</span><span class="v">ABS</span></div>
+                            <div class="prod-spec"><span class="k">Net weight</span><span class="v">250 g</span></div>
+                            <div class="prod-spec"><span class="k">Cover</span><span class="v">Sun &amp; rain</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
-                    <img src="04-防晒款-仕佰成YCD6S遮阳伞.png" alt="Sunshade mount with umbrella">
-                    <div class="product-info">
-                        <h3>Sunshade Mount with Umbrella</h3>
-                        <p class="feature">Built-in sun umbrella, sun protection, perfect for hot weather</p>
-                        <p class="price">$2.50 - $2.70 USD</p>
-                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+
+                <div class="prod-slide">
+                    <div class="prod-visual">
+                        <img src="产品图/pm09.png" alt="Eight-point shock-absorbing mount">
+                        <span class="prod-tag">8-point silicone</span>
                     </div>
+                    <div class="prod-detail">
+                        <span class="prod-sku">HL-PM 09</span>
+                        <h3 class="prod-name">Eight-point shock-absorbing mount</h3>
+                        <p class="prod-sub">Eight silicone contact points for a quieter, more stable ride.</p>
+                        <ul class="prod-points">
+                            <li class="prod-point"><i></i><span>Eight silicone pads protect the phone body</span></li>
+                            <li class="prod-point"><i></i><span>Handlebar clamp fits 25–35 mm bars</span></li>
+                            <li class="prod-point"><i></i><span>Shock-absorbing design cuts shake and noise</span></li>
+                            <li class="prod-point"><i></i><span>ABS body, 200 g, black finish</span></li>
+                        </ul>
+                        <div class="prod-specs">
+                            <div class="prod-spec"><span class="k">Phone fit</span><span class="v">4.7–7.0 in</span></div>
+                            <div class="prod-spec"><span class="k">Pack</span><span class="v">100 pcs/carton</span></div>
+                            <div class="prod-spec"><span class="k">Bar fit</span><span class="v">25–35 mm</span></div>
+                            <div class="prod-spec"><span class="k">Material</span><span class="v">ABS</span></div>
+                            <div class="prod-spec"><span class="k">Net weight</span><span class="v">200 g</span></div>
+                            <div class="prod-spec"><span class="k">Mount</span><span class="v">Handlebar</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod-slide">
+                    <div class="prod-visual">
+                        <img src="产品图/pm02.png" alt="Six-point metal-look mount">
+                        <span class="prod-tag">Premium look</span>
+                    </div>
+                    <div class="prod-detail">
+                        <span class="prod-sku">HL-PM 02</span>
+                        <h3 class="prod-name">Six-point metal-look mount</h3>
+                        <p class="prod-sub">A stronger shelf presence for riders upgrading from basic holders.</p>
+                        <ul class="prod-points">
+                            <li class="prod-point"><i></i><span>Six-point clamp with single-hand loading</span></li>
+                            <li class="prod-point"><i></i><span>Anti-shake contact pad</span></li>
+                            <li class="prod-point"><i></i><span>Metal-look finish and visible hardware</span></li>
+                            <li class="prod-point"><i></i><span>Ideal step-up model in a retail display</span></li>
+                        </ul>
+                        <div class="prod-specs">
+                            <div class="prod-spec"><span class="k">Phone fit</span><span class="v">4.7–7.2 in</span></div>
+                            <div class="prod-spec"><span class="k">Pack</span><span class="v">100 pcs/carton</span></div>
+                            <div class="prod-spec"><span class="k">Bar fit</span><span class="v">20–30 mm</span></div>
+                            <div class="prod-spec"><span class="k">Material</span><span class="v">PC</span></div>
+                            <div class="prod-spec"><span class="k">Net weight</span><span class="v">220 g</span></div>
+                            <div class="prod-spec"><span class="k">Mount</span><span class="v">Handlebar</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod-models">
+                    <button class="prod-model on" type="button" data-slide="0"><span class="num">01</span>Low-profile</button>
+                    <button class="prod-model" type="button" data-slide="1"><span class="num">02</span>Shock-absorbing</button>
+                    <button class="prod-model" type="button" data-slide="2"><span class="num">03</span>Weather shield</button>
+                    <button class="prod-model" type="button" data-slide="3"><span class="num">04</span>Eight-point</button>
+                    <button class="prod-model" type="button" data-slide="4"><span class="num">05</span>Six-point</button>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 48px; color: #86868b; font-size: 0.9rem;">
-                * Prices are reference only, actual prices depend on order quantity
-            </p>
         </div>
     </section>
     
-    <!-- 版块6：客户案例 -->
-    <section class="section clients">
+    <!-- 版块6：市场与客户类型 -->
+    <section class="section markets">
         <div class="container">
-            <h2 class="section-title fade-in">Our Clients</h2>
-            <p class="section-subtitle fade-in">Trusted by motorcycle accessory dealers across Vietnam</p>
-            <div class="client-logos fade-in">
-                <div class="client-logo">Motowolf</div>
-                <div class="client-logo">Bikers Saigon</div>
-                <div class="client-logo">Phụ Kiện 95 Shop</div>
+            <h2 class="section-title fade-in">Markets</h2>
+            <p class="section-subtitle fade-in">Where we focus, and who we serve.</p>
+
+            <div class="mk-grid">
+                <div class="fade-in">
+                    <div class="mk-label">
+                        <span>Markets</span>
+                    </div>
+
+                    <div class="region">
+                        <div class="region-top">
+                            <h3>South Asia</h3>
+                            <span class="region-tag"><i></i>Volume driver</span>
+                        </div>
+                        <p class="region-countries">India · Bangladesh · Pakistan</p>
+                    </div>
+
+                    <div class="region">
+                        <div class="region-top">
+                            <h3>Southeast Asia</h3>
+                            <span class="region-tag"><i></i>Commuting &amp; delivery</span>
+                        </div>
+                        <p class="region-countries">Indonesia · Vietnam · Thailand · Philippines</p>
+                    </div>
+
+                    <div class="region">
+                        <div class="region-top">
+                            <h3>Africa</h3>
+                            <span class="region-tag"><i></i>High volume, price-led</span>
+                        </div>
+                        <p class="region-countries">Nigeria · Kenya</p>
+                    </div>
+
+                    <div class="region">
+                        <div class="region-top">
+                            <h3>Middle East</h3>
+                            <span class="region-tag"><i></i>High ticket, quality first</span>
+                        </div>
+                        <p class="region-countries">UAE · Saudi Arabia · Turkey</p>
+                    </div>
+
+                    <div class="mk-buyers">
+                        <div class="mk-label">
+                            <span>Buyer types</span>
+                        </div>
+
+                        <div class="buyers-grid">
+                            <div class="buyer">
+                                <span class="num">01</span>
+                                <div>
+                                    <h4>Importers &amp; wholesalers</h4>
+                                    <p>Mixed containers, our largest order sizes</p>
+                                </div>
+                            </div>
+
+                            <div class="buyer">
+                                <span class="num">02</span>
+                                <div>
+                                    <h4>Chain retail &amp; marketplace sellers</h4>
+                                    <p>Amazon, Flipkart, Noon and local online stores</p>
+                                </div>
+                            </div>
+
+                            <div class="buyer">
+                                <span class="num">03</span>
+                                <div>
+                                    <h4>Accessory &amp; repair chains</h4>
+                                    <p>Workshop installs and repeat parts</p>
+                                </div>
+                            </div>
+
+                            <div class="buyer">
+                                <span class="num">04</span>
+                                <div>
+                                    <h4>Delivery &amp; rental fleets</h4>
+                                    <p>Batch orders on one specification</p>
+                                </div>
+                            </div>
+
+                            <div class="buyer">
+                                <span class="num">05</span>
+                                <div>
+                                    <h4>Private-label &amp; OEM brands</h4>
+                                    <p>Your brand on the box, our supply chain behind it</p>
+                                </div>
+                            </div>
+
+                            <div class="buyer">
+                                <span class="num">06</span>
+                                <div>
+                                    <h4>Riding gear shops</h4>
+                                    <p>A second category beside helmets and jackets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mk-map fade-in">
+                    <img src="markets/world-map.png" alt="World map of the markets we focus on">
+                    <div class="mk-note">
+                        <span><b>4</b> regions</span>
+                        <span><b>12</b> countries</span>
+                        <span><b>6</b> buyer types</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1272,6 +2125,11 @@
         </div>
     </section>
     
+    <!-- 工厂视频灯箱 -->
+    <div class="video-lightbox" id="videoLightbox">
+        <button class="lb-close" id="lbClose" type="button" aria-label="Close">×</button>
+        <video id="lbVideo" src="工厂/web/factory-tour.mp4" poster="工厂/web/factory-tour-poster.jpg" muted loop playsinline controls preload="metadata"></video>
+    </div>
     <script>
         // 互动步骤切换
         function showPainPoints() {
@@ -1385,6 +2243,86 @@
                 // 设置进度环
                 setProgress(step);
             });
+        });
+        // 工厂图片轮播
+        const factoryImgs = document.querySelectorAll('#factoryFrame img');
+        const factoryCap = document.getElementById('factoryCap');
+        const factoryCaps = ['01 / INJECTION MOULDING', '02 / ASSEMBLY', '03 / STOCK'];
+        const factoryDots = document.querySelectorAll('#factoryDots button');
+        let factoryIdx = 0;
+        let factoryTimer = null;
+
+        function setFactorySlide(i) {
+            factoryIdx = i;
+            factoryImgs.forEach((img, k) => img.classList.toggle('on', k === i));
+            factoryDots.forEach((d, k) => d.classList.toggle('on', k === i));
+            factoryCap.textContent = factoryCaps[i];
+        }
+
+        function startFactoryTimer() {
+            factoryTimer = setInterval(() => {
+                setFactorySlide((factoryIdx + 1) % factoryImgs.length);
+            }, 4500);
+        }
+
+        startFactoryTimer();
+
+        const factoryFrameEl = document.getElementById('factoryFrame');
+        factoryFrameEl.addEventListener('mouseenter', () => clearInterval(factoryTimer));
+        factoryFrameEl.addEventListener('mouseleave', startFactoryTimer);
+
+        factoryDots.forEach((dot, k) => {
+            dot.addEventListener('click', () => {
+                setFactorySlide(k);
+                clearInterval(factoryTimer);
+                startFactoryTimer();
+            });
+        });
+
+        // 工厂视频灯箱
+        const factoryVideoCard = document.getElementById('factoryVideoCard');
+        const videoLightbox = document.getElementById('videoLightbox');
+        const lbVideo = document.getElementById('lbVideo');
+        const lbClose = document.getElementById('lbClose');
+
+        function openFactoryVideo() {
+            videoLightbox.classList.add('open');
+            lbVideo.currentTime = 0;
+            lbVideo.play();
+        }
+
+        function closeFactoryVideo() {
+            videoLightbox.classList.remove('open');
+            lbVideo.pause();
+        }
+
+        factoryVideoCard.addEventListener('click', openFactoryVideo);
+        lbClose.addEventListener('click', closeFactoryVideo);
+        videoLightbox.addEventListener('click', (e) => {
+            if (e.target === videoLightbox) closeFactoryVideo();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoLightbox.classList.contains('open')) closeFactoryVideo();
+        });
+
+        // 产品轮播（首尾循环）
+        const prodSlides = document.querySelectorAll('.prod-slide');
+        const prodModels = document.querySelectorAll('.prod-model');
+        const prodPrev = document.querySelector('.prod-prev');
+        const prodNext = document.querySelector('.prod-next');
+        let prodIdx = 0;
+
+        function setProdSlide(i) {
+            const total = prodSlides.length;
+            prodIdx = ((i % total) + total) % total;
+            prodSlides.forEach((slide, k) => slide.classList.toggle('on', k === prodIdx));
+            prodModels.forEach((model, k) => model.classList.toggle('on', k === prodIdx));
+        }
+
+        prodPrev.addEventListener('click', () => setProdSlide(prodIdx - 1));
+        prodNext.addEventListener('click', () => setProdSlide(prodIdx + 1));
+        prodModels.forEach((model) => {
+            model.addEventListener('click', () => setProdSlide(parseInt(model.dataset.slide, 10)));
         });
     </script>
 </body>
